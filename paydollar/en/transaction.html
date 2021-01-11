@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<title>PayDollar PayGate Integration Guide</title>
+    	<link rel="canonical" href="https://paydollar.com/" />
+    	<meta name="description" content=""/>
+    	<meta property="og:title" content="PayDollar PayGate Integration Guide" />
+    	<meta property="og:type" content="website" />
+    	<meta property="og:url" content="https://paydollar.com/"/>
+    	<meta property="og:site_name" content="PayDollar Developer Portal" />
+    	<meta property="og:description" content=""/>
+    	<meta itemprop="name" content="PayDollar PayGate Integration Guide" />
+    	<meta itemprop="description" content=""/>
+    	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    	
+    	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../css/style.css" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Navbar Header -->
+    	<section id="navbarHeader">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+                <div class="inner-navigation-container">
+                    <a class="navbar-brand" href="https://asiapay.com/" target="_blank" style="justify-content: space-around;">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="70px" height="70px" viewBox="0 0 528.043 475.146" enable-background="new 0 0 528.043 475.146"
+                            xml:space="preserve">
+                            <path fill="#2B3382" d="M175.99,247.849h-8.716c-17.416,1.58-29.278,7.916-35.622,11.883c-16.625,8.708-16.625,30.075-16.625,37.995
+                                v152.816c0,1.58,0,3.963,1.575,3.963c2.37-0.788,1.581,0,3.972-0.788l14.233-3.967c1.582,0,2.373-1.58,2.373-3.162V386.41
+                                c7.125,4.75,15.833,9.5,30.094,10.297h5.552c34.05,0,49.1-35.63,49.1-77.588C221.926,282.679,207.665,247.849,175.99,247.849z
+                                 M170.463,376.899h-3.188c-12.653-0.784-21.361-4.75-30.094-9.498v-79.973c0-8.701,11.893-19.471,30.89-20.276
+                                c1.791-0.309,2.392-0.307,3.967-0.307c23.758,0,25.341,28.508,25.341,53.049C197.379,348.404,194.988,376.899,170.463,376.899z"/>
+                            <path fill="#F8991D" d="M318.511,65.724h-4.737C295.569,66.521,272.6,74.44,272.6,79.189c0,1.573,0,2.378,0.792,3.951l3.944,9.5
+                                c0.677,1.526,0.792,1.581,1.6,1.581c3.164,0,16.092-9.552,35.113-9.552c0.792,0,0.517,0.064,1.31,0.064
+                                c20.569,0,26.12,9.487,26.12,26.914v10.297c-6.341,0-16.624,0.789-27.705,2.369c-22.965,3.967-49.098,15.85-49.098,49.102
+                                c0,26.122,14.26,41.18,37.994,41.18h11.104c18.209-1.594,30.079-5.558,33.258-7.93c15.048-9.498,16.628-27.719,16.628-42.755v-57.01
+                                C363.659,81.568,351.769,65.724,318.511,65.724z M341.479,183.705c0,4.742-14.26,10.289-27.705,11.086h-4.76
+                                c-15.052,0-22.97-11.878-22.97-23.747c0-17.417,13.47-24.558,27.729-27.711c11.081-3.169,22.154-3.169,27.705-3.169V183.705z"/>
+                            <path fill="#2B3382" d="M461.034,254.171c0-2.373,0.814-5.534-1.576-5.534l-15.841-0.788c-2.37,0-3.945,0-3.945,1.58l-0.791,118.771
+                                c-7.917,7.12-17.414,9.497-31.675,9.497c-18.209,0.798-29.286-18.213-30.104-41.161c-1.574-29.313,0-55.45,0-84.737
+                                c0-0.783-3.154-3.161-5.526-3.161h-14.255c0,0-3.162,3.953-3.162,4.756c0.792,15.823,6.317,114.009,10.289,121.135
+                                c1.581,2.372,4.737,7.135,7.919,11.086c3.161,3.169,7.134,5.547,11.87,8.716c10.289,6.328,42.754,3.95,55.435-7.122l0.792,13.45
+                                l-0.792,15.052c-0.791,15.059-0.791,39.58-23.758,40.365c-15.052,0-22.18-9.485-24.552-1.568c0,0.783-2.365,11.877-1.572,13.45
+                                c2.363,3.175,9.496,6.344,22.176,7.141c16.602,0.784,35.623-7.916,41.178-19.808c9.47-18.997,8.705-63.332,8.705-79.97
+                                L461.034,254.171z"/>
+                            <path fill="#F8991D" d="M198.96,80.763c0-1.573,0.783-2.359,0.783-3.156c0-1.573-0.783-3.167-3.156-3.963
+                                c-7.916-3.953-24.549-8.716-34.838-8.716c-26.151,0-44.357,16.641-44.357,41.177c0,44.349,64.936,37.229,64.936,68.102
+                                c0,14.242-10.289,21.369-22.97,21.369c-20.577,0-35.622-10.297-37.994-10.297c-0.789,0-2.391,0-3.18,2.391l-3.947,9.5
+                                c-0.789,0.79-0.789,1.581-0.789,3.167c0,5.534,30.069,14.261,44.33,14.261c25.338,0,47.519-14.261,47.519-41.972
+                                c0-45.929-65.725-36.432-65.725-68.898c0-14.242,10.287-19.789,22.178-19.789c15.025,0,27.711,7.92,29.286,7.92
+                                c1.58,0,2.369-0.792,3.953-3.169L198.96,80.763z"/>
+                            <path fill="#F8991D" d="M242.498,73.643c0-2.378-0.792-3.953-3.945-3.953h-15.052c-2.392,0-3.972,0.797-3.972,3.169v134.598
+                                c0,2.378,1.58,3.161,3.972,3.161h15.052c2.37,0,3.945-0.783,3.945-3.161V73.643z M247.262,17.423c0-9.499-7.92-17.423-17.417-17.423
+                                c-10.315,0-18.205,7.925-18.205,17.423c0,10.301,7.89,18.205,18.205,18.205C239.342,35.628,247.262,27.724,247.262,17.423"/>
+                            <path fill="#2B3382" d="M289.103,249.036h-4.737c-18.204,0.797-41.174,8.716-41.174,13.466c0,1.573,0,2.378,0.791,3.95l3.945,9.501
+                                c0.677,1.525,0.792,1.58,1.6,1.58c3.163,0,16.092-9.552,35.113-9.552c0.792,0,0.517,0.064,1.309,0.064
+                                c20.569,0,26.121,9.487,26.121,26.915v10.297c-6.341,0-16.625,0.788-27.705,2.369c-22.966,3.966-49.099,15.849-49.099,49.102
+                                c0,26.122,14.261,41.18,37.994,41.18h11.104c18.209-1.594,30.079-5.558,33.258-7.93c15.047-9.498,16.628-27.719,16.628-42.755
+                                v-57.01C334.251,264.88,322.36,249.036,289.103,249.036z M312.07,367.018c0,4.742-14.26,10.288-27.705,11.086h-4.76
+                                c-15.053,0-22.97-11.877-22.97-23.747c0-17.417,13.47-24.559,27.729-27.711c11.08-3.17,22.153-3.17,27.705-3.17V367.018z"/>
+                            <path fill="#F8991D" d="M53.835,65.724h-4.736C30.894,66.521,7.925,74.44,7.925,79.19c0,1.573,0,2.378,0.791,3.95l3.945,9.5
+                                c0.676,1.525,0.792,1.581,1.599,1.581c3.164,0,16.092-9.552,35.113-9.552c0.792,0,0.518,0.065,1.31,0.065
+                                c20.569,0,26.121,9.487,26.121,26.915v10.296c-6.341,0-16.625,0.789-27.705,2.37C26.133,128.281,0,140.164,0,173.417
+                                c0,26.122,14.26,41.179,37.994,41.179h11.104c18.208-1.594,30.078-5.558,33.258-7.929c15.047-9.499,16.628-27.72,16.628-42.756
+                                v-57.01C98.984,81.568,87.093,65.724,53.835,65.724z M76.804,183.705c0,4.742-14.261,10.289-27.705,11.087h-4.761
+                                c-15.052,0-22.969-11.878-22.969-23.748c0-17.417,13.469-24.558,27.729-27.711c11.08-3.169,22.153-3.169,27.705-3.169V183.705z"/>
+                            <g>
+                                <path fill="#2B3382" d="M528.043,267.757c0,6.389-2.263,11.846-6.786,16.369c-4.524,4.523-9.98,6.785-16.37,6.785
+                                    s-11.847-2.262-16.37-6.785c-4.524-4.523-6.786-9.98-6.786-16.369s2.262-11.84,6.786-16.354c4.523-4.515,9.98-6.772,16.37-6.772
+                                    s11.846,2.258,16.37,6.772C525.78,255.917,528.043,261.368,528.043,267.757z M524.949,267.757c0-5.578-1.96-10.332-5.88-14.263
+                                    s-8.646-5.896-14.183-5.896s-10.264,1.965-14.183,5.896c-3.92,3.931-5.88,8.685-5.88,14.263c0,5.58,1.96,10.338,5.88,14.277
+                                    c3.919,3.938,8.646,5.908,14.183,5.908s10.263-1.97,14.183-5.908C522.989,278.095,524.949,273.337,524.949,267.757z
+                                     M518.199,279.536h-6.073l-7.578-9.5h-3.286v9.5h-4.438v-24.5h7.476c1.678,0,3.004,0.063,3.979,0.188
+                                    c0.973,0.125,1.96,0.473,2.961,1.045c1.07,0.607,1.848,1.34,2.33,2.196c0.482,0.857,0.724,1.956,0.724,3.294
+                                    c0,1.787-0.495,3.251-1.485,4.394s-2.279,2.036-3.867,2.679L518.199,279.536z M509.418,262.052c0-0.661-0.106-1.232-0.321-1.715
+                                    c-0.213-0.482-0.588-0.894-1.123-1.233c-0.445-0.286-0.945-0.478-1.498-0.576s-1.266-0.147-2.139-0.147h-3.075v8.281h2.62
+                                    c0.855,0,1.658-0.084,2.407-0.254s1.354-0.461,1.818-0.871c0.464-0.412,0.798-0.885,1.003-1.421S509.418,262.892,509.418,262.052z"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <p class="navbar-text visible-xs-inline-block">Developer</p>         
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">PAYDOLLAR <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">PESOPAY</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SIAMPAY</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <div class="main-container">
+            <!-- Sidebar Menu -->
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <ul class="list-group">
+                    <!-- Menu without submenu -->
+                    <li class="mtop-40">
+                        <a id="ReleaseNote" href="#" class="list-group-item list-group-item-action menu-hover">
+                            <div class="d-flex w-100 justify-content-start align-items-center menu-hover">
+                                <span class="menu-collapsed pleft-5 pright-5">Release Note</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Submenu 1 -->
+                    <li>
+                        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Overview</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 1-->
+                    <div id='submenu1' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="Introduction" href="overview.html" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 2 -->
+                    <li>
+                        <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Connection Method</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu 2a-->
+                    <div id='submenu2' class="collapse sidebar-submenu">
+                        <li>
+                            <a href="#submenu2a" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">Client Post Through Browser</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 2a-->
+                        <div id='submenu2a' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="ConnectionScopeCompatibility" href="connection_cpb.html#ScopeCompatibility" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Scope and Compatibility</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionCreditPaymentFlow" href="connection_cpb.html#CreditPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Credit Card Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionCreditInstallmentPaymentFlow" href="connection_cpb.html#CreditInstallmentPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Credit Card with Installment Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionBillPaymentFlow" href="connection_cpb.html#BillPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Bill Payment FLow (BPM)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionPermataPaymentFlow" href="connection_cpb.html#PermataPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Permata, BII and BCA Virtual Account (VA) Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionDefinitionParametersIntegrationPage" href="connection_cpb.html#DefinitionParametersIntegrationPage" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Definition of Parameters in the Integration</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionParametersSupporting3ds" href="connection_cpb.html#ParametersSupporting3DS" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Parameters for Supporting 3DS</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionExampleClientPostMethod" href="connection_cpb.html#ExampleClientPostMethod" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Example of Client Post Method (Source Code)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionKickOff" href="connection_cpb.html#KickOffClientPostThrough" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Kick Off</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                        <!-- Submenu 2b-->
+                        <li>
+                            <a href="#submenu2b" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">Direct Client Side Connection</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 2b-->
+                        <div id='submenu2b' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="DCSCreditDebitPaymentFlow" href="connection_dcs.html#CreditDebitCardPaymentFlowDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Credit and Debit Card Payment Flow for Visa, Masters, Diners, JCB, AMEX</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSOtherPaymentFlow" href="connection_dcs.html#OtherPaymentFlowDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Other Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSNon3dTransaction" href="connection_dcs.html#Non3DTransactionDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Non-3D transaction</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCS3dTransaction" href="connection_dcs.html#3DTransactionDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">3D transaction</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSIntegrationProcedures" href="connection_dcs.html#IntegrationProceduresDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Integration Procedures</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSDefinitionParameters" href="connection_dcs.html#DefinitionParametersDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Definition of Parameters in the Integration</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSParametersSupporting3ds" href="connection_dcs.html#ParametersSupporting3DSDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Parameters for Supporting 3DS 2.0</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSExampleConnectingGateway" href="connection_dcs.html#ExampleConnectingGatewayDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Example of connecting to our gateway (Direct Client Side Connection)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSKickOff" href="connection_dcs.html#KickOffDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Kick Off</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                        <!-- Submenu 2c-->
+                        <li>
+                            <a href="#submenu2c" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">Server Side Connection</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 3b-->
+                        <div id='submenu2c' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="SSDDefinitionParametersIntegration" href="connection_ssd.html#DefinitionParametersIntegrationPageServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Definition of Parameters in the Integration Page</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="SSDParametersSupporting3DS" href="connection_ssd.html#ParametersSupporting3DSServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Parameters for Supporting 3DS 2.0</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="SSDExampleSourceCode" href="connection_ssd.html#ExampleSourceCodeServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Example of Source Code</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="SSDKickOff" href="connection_ssd.html#KickOffServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Kick Off</h5>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    
+                    <!-- Submenu 4-->
+                    <li>
+                        <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Data Feed Handling</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 4-->
+                    <div id='submenu4' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="DFDefinitionParameters" href="data_feed.html#DefinitionParameters" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Definition of parameters in the output of data feed</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="DFDataFeedSetUp" href="data_feed.html#DataFeedSetUp" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Data feed set up</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="DFSampleDataFeed" href="data_feed.html#SampleDataFeedPage" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sample data feed</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 5-->
+                    <li>
+                        <a href="#submenu5" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Transaction Security by Secure Hash</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 5-->
+                    <div id='submenu5' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="TransactionIntroduction" href="transaction.html#IntroductionTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionBasicFlowSecureHash" href="transaction.html#BasicFlowSecureHashTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Basic flow of secure hash</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionClientLibrary" href="transaction.html#ClientLibraryTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Client library provided by paydollar</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionGeneratingVerifyingSecureHash" href="transaction.html#GeneratingVerifyingSecureHashManually" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Generating and verifying secure hash manually</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionEnableSecureHash" href="transaction.html#EnableSecureHashTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Enable secure hash function of your merchant account</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 6-->
+                    <li>
+                        <a href="#submenu6" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Multi-Currency Processing Service</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 6-->
+                    <div id='submenu6' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="MCPIntroduction" href="mcp.html#IntroductionMultiCurrency" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPSimpleCurrencyCoversion" href="mcp.html#SimpleCurrencyConversionMultiCurrency" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Simple currency conversion (scp)</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPSampleCurrencyCoversion" href="mcp.html#SampleCurrencyConversionMultiCurrency" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sample currency conversion (scp) sample transaction screen</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPMultiCurrencyPricing" href="mcp.html#MultiCurrencyPricing" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Multi-currency pricing (mcp)</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPMultiCurrencyPricingSampleTransaction" href="mcp.html#MultiCurrencyPricingSampleTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Multi-currency pricing (mcp) sample transaction screen</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 7-->
+                    <li>
+                        <a href="#submenu7" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Functions of Merchant API</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 7-->
+                    <div id='submenu7' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="APIIntroduction" href="api.html#IntroductionAPIFunctions" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction of api functions</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APICaptureAuthorizedPayment" href="api.html#CaptureAuthorizedPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Capture authorized payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIVoidAcceptedPayment" href="api.html#VoidAcceptedPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Void accepted payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIRequestRefund" href="api.html#RequestRefundAcceptedPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Request refund for accepted payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIQueryPaymentStatus" href="api.html#QueryPaymentStatusAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Query payment status</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIQueryRequestLog" href="api.html#QueryRequestLogAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Query request log</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APICancelPayment" href="api.html#CancelPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Cancel payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APISettlementReportRequest" href="api.html#SettlementReportRequestAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Settlement report request</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APISampleSourceCode" href="api.html#SampleSourceCodeAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sample source code of html server-side posting java</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 8-->
+                    <li>
+                        <a href="#submenu8" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Exceptional Transaction Handling</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 8-->
+                    <div id='submenu8' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="ExceptionUnsuccessfulDataFeed" href="exception.html#UnsuccessfulDataFeedExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Unsuccessful data feed</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="ExceptionUnsuccessfulRedirection" href="exception.html#UnsuccessfulRedirectionExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Unsuccessful redirection to successurl / failurl / cancelurl</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="ExceptionIncomplete3dAuthentication" href="exception.html#Incomplete3dAuthenticationExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Incomplete 3d authentication transactions by customer</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="ExceptionIncomplete99Bill" href="exception.html#Incomplete99BillExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Incomplete 99bill / alipay / chinapay / pps / tenpay / scb / bay / ktb / uob / tmb / bbl ibanking / upop / m2u / cimbclick / wechat transactions by customer</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 9-->
+                    <li>
+                        <a href="#submenu9" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">PaySDK IOS Moile SDK</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 9-->
+                    <div id='submenu9' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="IOSIntegrationSteps" href="sdk_ios.html#SDKIntegrationStepsIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sdk integration steps</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSWebviewPaymentCall" href="sdk_ios.html#WebViewPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Webview payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSDirectPaymentCall" href="sdk_ios.html#DirectPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Direct payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSInstallmentPayment" href="sdk_ios.html#InstallmentPaymentIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Installment payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSSchedulePay" href="sdk_ios.html#SchedulePayIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Schedule pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSMemberPay" href="sdk_ios.html#MemberPayIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Member pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSPromoPay" href="sdk_ios.html#PromoPayIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Promo pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSAliPayGlobalPayment" href="sdk_ios.html#AlipayGlobalPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay global payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSAliPayHKPayment" href="sdk_ios.html#AlipayHKPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay hk payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSAliPayChinaPayment" href="sdk_ios.html#AlipayHKPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay china payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSWechatPayment" href="sdk_ios.html#WeChatPayPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Wechat payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOS3dsPayment" href="sdk_ios.html#3DSPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collasped font-14 pleft-60 pright-30">3ds 2.0 payment call</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 10-->
+                    <li>
+                        <a href="#submenu10" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">PaySDK Android Mobile SDK</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 10-->
+                    <div id='submenu10' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="AndroidIntegrationSteps" href="sdk_android.html#SDKIntegrationStepsAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sdk integration steps</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidWebviewPaymentCall" href="sdk_android.html#WebviewPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Webview payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidDirectPaymentCall" href="sdk_android.html#DirectPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Direct payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidInstallmentPayment" href="sdk_android.html#InstallmentPaymentAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Installment payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidSchedulePay" href="sdk_android.html#SchedulePayAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Schedule pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidMemberPay" href="sdk_android.html#MemberPayAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Member pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidPromoPay" href="sdk_android.html#PromoPayAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Promo pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidAliPayGlobalPayment" href="sdk_android.html#AliPayGlobalPaymentAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay global payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidAliPayHKPayment" href="sdk_android.html#AlipayHKPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay hk payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidAliPayChinaPayment" href="sdk_android.html#AliPayChinaPaymentAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay china payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidWechatPayment" href="sdk_android.html#WeChatPayPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Wechat payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="Android3dsPayment" href="sdk_android.html#3DSPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">3ds 2.0 payment call</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 11-->
+                    <li>
+                        <a href="#submenu11" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Frequently Asked Questions</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 11-->
+                    <div id='submenu11' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="FAQSystemSetup" href="faq.html#SystemSetupFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">System setup</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQCommonProblems" href="faq.html#CommonProblemsFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Common problems</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQDataFeed" href="faq.html#DataFeedFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Data feed</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQ3dSecureAuthentication" href="faq.html#3DSecureAuthenticationFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">3-d secure authentication</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQDataSecurity" href="faq.html#DataSecurityFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Data security</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQSupport" href="faq.html#SupportFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Support</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 12-->
+                    <li>
+                        <a href="#submenu12" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Appendix A</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 12a-->
+                    <div id='submenu12' class="collapse sidebar-submenu">
+                        <li>
+                            <a href="#submenu12a" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">PayDollar Payment Response Code</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 12a-->
+                        <div id='submenu12a' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="AppendixPrimaryResponseCode" href="appendix_response_code.html#PrimaryResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Primary Response Code (PRC)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="AppendixSecondaryResponseCode" href="appendix_response_code.html#SecondaryResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Secondary Response Code (SRC)</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                         <!-- Submenu content 12b-->
+                        <li>
+                            <a href="#submenu12b" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">List of Response Code</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 12b-->
+                        <div id='submenu12b' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="ListBanksResponseCode" href="appendix_response_code_list.html#BanksResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Bank's Response Code</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ListResponseCodePayDollar" href="appendix_response_code_list.html#AppendixListResponseCodePayDollar" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Response Code from PayDollar</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ListOtherResponseCode" href="appendix_response_code_list.html#OtherResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Other Response Code</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                        <!-- Submenu content 12-->
+                        <li>
+                            <a id="ListCountryCode" href="appendix_country_code.html#AppendexListCountryCode" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">List of Country Code</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 13-->
+                    <li class="mtop-50">
+                        <a id="DownloadPDF" href="https://www.paydollar.com/pdf/op/enpdintguide.pdf" download="HTML 5 PDF" target="_blank" class="list-group-item list-group-item-action menu-hover">
+                            <div class="d-flex w-100 justify-content-start align-items-center menu-hover">
+                                <span class="menu-collapsed pleft-5 pright-5">Download PDF</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Submenu 14-->
+                    <li>
+                        <a id="ContactUs" href="mailto:sales@asiapay.com?subject=PayGate Integration Guide version no.:3.61" class="list-group-item list-group-item-action menu-hover">
+                            <div class="d-flex w-100 justify-content-start align-items-center menu-hover pbottom100">
+                                <span class="menu-collapsed pleft-5 pright-5">Contact Us</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul><!-- List Group END-->
+            </div>
+
+            <!-- Main Content -->
+            <div id="main">
+                <div class="main-header-fixed">
+                    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+                    <p class="font-12 card-small-text-title"><i>PayGate Integration Guide version no.:3.61</i></p>
+                </div>
+                <div class="card-container shadow-sm bg-white">
+                    <div class="dropdown btn-language">
+                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            English
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right hover" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item font-12" href="#">Traditional Chinese</a>
+                            <a class="dropdown-item font-12" href="#">Simplified Chinese</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <ul id="IntroductionTransaction" class="list-style mbottom-0">
+                                <li><span class="card-title">Introduction</span></li>
+                            </ul>
+                            <p>The purpose of Secure Hash is to enhance the transaction message communication security between
+                                merchant site and PayDollar. By employing this technology, the integrity of the information and the
+                                identity of the signatory can be authenticated with industry standard. 
+                            </p>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="BasicFlowSecureHashTransaction" class="list-style mbottom-0">
+                                <li><span class="card-title">Basic flow of Secure Hash</span></li>
+                            </ul>
+                            <img src="../../images/basic-flow-of-secure-hash.jpg" class="img-fluid" alt="Basic flow of Secure Hash" width="100%">        
+                            <ol class="ordered-list mbottom-0">
+                                <p><li class="ordered-list">For all transaction request send from merchant site to PayDollar, secure hash should be calculated
+                                        and added to the transaction request to authenticate the integrity of the transaction information and
+                                        the identity of the merchant. 
+                                    </li>
+                                </p>
+                                <p><li class="ordered-list">The secure hash is calculated by hashing the following parameters using SHA-1, a cryptographic
+                                        hash function of industry standard. 
+                                        <ul class="list-style mbottom-0 mleft-30 mbottom-0 mtop-10">
+                                            <li>- Merchant ID</li>
+                                            <li>- Merchant Reference Number</li>
+                                            <li>- Currency Code</li>
+                                            <li>- Amount</li>
+                                            <li>- Secure Hash Secret – Assigned by PayDollar to merchant.</li>
+                                        </ul>
+                                    </li>
+                                </p>    
+                                <p><li class="ordered-list">When the transaction request is received, PayDollar verifies the transaction by comparing the
+                                        secure hash submitted by merchant and the secure hash re-calculated by other input parameters.
+                                        If both values are the same, existing payment flow will follows. Or else, the payment request will be 
+                                        PayDollar PayGate Integration Guide (v3.61) Page 72
+                                        dropped. PayDollar will send out an email to notify the merchant through the operation contact. 
+                                    </li>
+                                </p>  
+                                <p><li class="ordered-list">After the transaction is completed, PayDollar will send out datafeed to merchant site. A secure hash
+                                        will also be calculated by hashing the following parameters using SHA-1, 
+                                        <ul class="list-style mbottom-0 mleft-30 mbottom-0 mtop-10">
+                                            <li>- Src</li>
+                                            <li>- Prc</li>
+                                            <li>- Success Code</li>
+                                            <li>- Merchant Reference Number</li>
+                                            <li>- PayDollar Reference Number</li>
+                                            <li>- Currency Code</li>
+                                            <li>- Amount</li>
+                                            <li>- Payer Authentication Status</li>
+                                            <li>- Secure Hash Secret</li>
+                                        </ul>
+                                    </li>
+                                </p> 
+                                <p class="mbottom-0"><li class="ordered-list">After receiving the datafeed, merchant is suggested to verify the information by comparing the
+                                        secure hash posted by PayDollar and the secure hash re-calculated by other response parameters.
+                                        If the values doesn’t matched, the datafeed may have been tampered within the redirection process
+                                        and you are suggested to do further investigation before confirmation the order. 
+                                    </li>
+                                </p>        
+                            </ol>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="ClientLibraryTransaction" class="list-style mbottom-0">
+                                <li><span class="card-title">Client library provided by PayDollar</span></li>
+                            </ul>
+                            <p>Client library is provided by PayDollar to facilitate the secure hash generation and verification
+                                process. It supports common programming language including Java, PHP, ASP, ASP.NET. The
+                                following function calls are supported. 
+                            </p>
+                            <table class="table table-sm table-responsive-sm table-bordered table-hover font-14">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" colspan="1">Functions</th>
+                                        <th scope="col" width="50%">Parameters</th>
+                                        <th scope="col" colspan="1">Descriptions</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Required Parameter ( with UTF-8 Encoding ) for connect to our payment page</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>generateSecureHash</b></td>
+                                        <td><u>Input</u>
+                                            <p><ul>
+                                                    <li>- Merchant ID</li>
+                                                    <li>- Merchant Reference Number</li>
+                                                    <li>- Currency Code</li>
+                                                    <li>- Amount</li>
+                                                    <li>- Payment Type</li>
+                                                    <li>- Secure Hash Secret</li>
+                                                </ul>
+                                            </p>
+                                            <u>Output</u>
+                                            <p><ul>
+                                                    <li>- Secure Hash String</li>
+                                                </ul>
+                                            </p>
+                                        </td>
+                                        <td>Create a secure hash using the input
+                                            parameters and Secure Hash Secret. 
+                                            <br><br>
+                                            (The result secure hash should be
+                                            included in the payment parameter
+                                            send to PayDollar.) 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>verifyDatafeed</b></td>
+                                        <td><u>Input</u>
+                                            <p><ul>
+                                                    <li>- Src</li>
+                                                    <li>- Prc</li>
+                                                    <li>- Success Code</li>
+                                                    <li>- Merchant Reference Number</li>
+                                                    <li>- PayDollar Reference Number</li>
+                                                    <li>- Currency Code</li>
+                                                    <li>- Amount</li>
+                                                    <li>- Payer Authentication Status</li>
+                                                    <li>- Secure Hash Secret</li>
+                                                    <li>- Secure Hash from PayDollar</li>
+                                                </ul>
+                                            </p>
+                                            <u>Output</u>
+                                            <p><ul>
+                                                    <li>- True/False</li>
+                                                </ul>
+                                            </p>
+                                        </td>
+                                        <td>(If the result of the output is true, it is
+                                            verified that the result is sent from
+                                            PayDollar and it is safe to trust the
+                                            result.) 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="mbottom-0">*Please login to PayDollar Merchant Administration Tools and download client library with sample
+                                code under Support  Developer Corner. 
+                            </p>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="GeneratingVerifyingSecureHashManually" class="list-style mbottom-0">
+                                <li><span class="card-title">Generating and verifying Secure Hash manually</span></li>
+                            </ul>
+                            <p>Merchant may also generate and verify secure hash manually, without using the client library provided by PayDollar. The following diagrams list out the exact algorithm, </p>
+                            <table class="table table-sm table-responsive-sm table-bordered table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td><b>Generate Secure Hash</b>
+                                            <ol class="ordered-list">
+                                                <li class="ordered-list">Create the signing data string. <br>
+                                                    Signing data string = Merchant ID + “|” + Merchant Reference + “|” + Currency Code + “|” + Amount + “|” + Payment Type + “|” + Secure Hash Secret
+                                                </li>
+                                                <li class="ordered-list">Secure Hash = SHA-1(Signing data string)</li>
+                                            </ol>
+                                            <p>SHA-1 is the original 160-bit hash function.</p>
+                                            <p><u>Example of Secure Hash Secret</u><br>
+                                                gMAVIEGVpqHvxoNEqbrZRuBDFT1B0icW 
+                                            </p>
+                                            <p><u>Example of Signing data string</u><br>
+                                                56100908|1280204670187|344|10|N|gMAVIEGVpqHvxoNEqbrZRuBDFT1B0icW  
+                                            </p>
+                                            <p><u>Example of Secure Hash</u><br>
+                                                13068c0ef09139ea711d36bde16785a2d30b9a30 
+                                            </p>
+                                            <br>
+                                            <p class="mbottom-0"><b>Verifying Secure Hash from PayDollar datafeed</b></p>
+                                            <ol class="ordered-list">
+                                                <li class="ordered-list">Create the verify data string. <br>
+                                                    Verify data string = Src + “|” + Prc + “|” + Success Code + “|” + Merchant Reference Number +
+                                                    “|” + PayDollar Reference Number + “|” + Currency Code + “|” + Amount + “|” + Payer
+                                                    Authentication Status + “|” + Secure Hash Secret 
+                                                </li>
+                                                <li class="ordered-list">Verify Secure Hash = SHA-1 (Verify data string)</li>
+                                                <li class="ordered-list">Extract the secure hash from PayDollar datafeed.</li>
+                                                <li class="ordered-list">Compare the output from step 2 and step 3. If they are equals, return True, else return False.</li>
+                                            </ol>
+                                            <p class="mbottom-0">*SHA-1 is the original 160-bit hash function. </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="EnableSecureHashTransaction" class="list-style mbottom-0">
+                                <li><span class="card-title">Enable Secure Hash function of your merchant account</span></li>
+                            </ul>
+                            <ol class="ordered-list-alpha mbottom-0">
+                                <li class="ordered-list-alpha">Please contact PayDollar Service Department 
+                                    <a href="(service@paydollar.com)" target="_blank" style="text-decoration: none;">(service@paydollar.com)</a> 
+                                    to enable the Secure Hash function of your merchant account.
+                                </li>
+                                <li class="ordered-list-alpha">You may retrieve the Secure Hash Secret of the merchant account by accessing to the Merchant
+                                    Administration Interface, “Profile”  “Payment Information”. The Secure Hash Secret must be
+                                    kept safely for the function to be effective. 
+                                </li>
+                                <li class="ordered-list-alpha">The Secure Hash Secret will be changed every 2 years to enhance the level of security.</li>
+                                <li class="ordered-list-alpha">Once this function is enabled, a valid Secure Hash should be included in all transaction requests.
+                                    All transaction without valid Secure Hash will be dropped by PayDollar. 
+                                </li>
+                                <li class="ordered-list-alpha">You may download client library with sample code under,
+                                    PayDollar Merchant Administration Tools  Support  Developer Corner. 
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Auto Update Year -->
+                <footer>
+                    <p class="text-muted footer"> Copyright &copy; <script>document.write(new Date().getFullYear())</script> AsiaPay All Rights Reserved</p>
+                </footer>
+            </div>
+        </div>
+    </body>
+
+    <script src="../../js/bootstrap.bundle.min"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="../../js/style.js"></script>
+</html>

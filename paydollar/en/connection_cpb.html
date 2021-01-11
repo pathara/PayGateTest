@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<title>PayDollar PayGate Integration Guide</title>
+    	<link rel="canonical" href="https://paydollar.com/" />
+    	<meta name="description" content=""/>
+    	<meta property="og:title" content="PayDollar PayGate Integration Guide" />
+    	<meta property="og:type" content="website" />
+    	<meta property="og:url" content="https://paydollar.com/"/>
+    	<meta property="og:site_name" content="PayDollar Developer Portal" />
+    	<meta property="og:description" content=""/>
+    	<meta itemprop="name" content="PayDollar PayGate Integration Guide" />
+    	<meta itemprop="description" content=""/>
+    	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    	
+    	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../css/style.css" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Navbar Header -->
+	    <section id="navbarHeader">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+                <div class="inner-navigation-container">
+                    <a class="navbar-brand" href="https://asiapay.com/" target="_blank" style="justify-content: space-around;">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="70px" height="70px" viewBox="0 0 528.043 475.146" enable-background="new 0 0 528.043 475.146"
+                            xml:space="preserve">
+                            <path fill="#2B3382" d="M175.99,247.849h-8.716c-17.416,1.58-29.278,7.916-35.622,11.883c-16.625,8.708-16.625,30.075-16.625,37.995
+                                v152.816c0,1.58,0,3.963,1.575,3.963c2.37-0.788,1.581,0,3.972-0.788l14.233-3.967c1.582,0,2.373-1.58,2.373-3.162V386.41
+                                c7.125,4.75,15.833,9.5,30.094,10.297h5.552c34.05,0,49.1-35.63,49.1-77.588C221.926,282.679,207.665,247.849,175.99,247.849z
+                                 M170.463,376.899h-3.188c-12.653-0.784-21.361-4.75-30.094-9.498v-79.973c0-8.701,11.893-19.471,30.89-20.276
+                                c1.791-0.309,2.392-0.307,3.967-0.307c23.758,0,25.341,28.508,25.341,53.049C197.379,348.404,194.988,376.899,170.463,376.899z"/>
+                            <path fill="#F8991D" d="M318.511,65.724h-4.737C295.569,66.521,272.6,74.44,272.6,79.189c0,1.573,0,2.378,0.792,3.951l3.944,9.5
+                                c0.677,1.526,0.792,1.581,1.6,1.581c3.164,0,16.092-9.552,35.113-9.552c0.792,0,0.517,0.064,1.31,0.064
+                                c20.569,0,26.12,9.487,26.12,26.914v10.297c-6.341,0-16.624,0.789-27.705,2.369c-22.965,3.967-49.098,15.85-49.098,49.102
+                                c0,26.122,14.26,41.18,37.994,41.18h11.104c18.209-1.594,30.079-5.558,33.258-7.93c15.048-9.498,16.628-27.719,16.628-42.755v-57.01
+                                C363.659,81.568,351.769,65.724,318.511,65.724z M341.479,183.705c0,4.742-14.26,10.289-27.705,11.086h-4.76
+                                c-15.052,0-22.97-11.878-22.97-23.747c0-17.417,13.47-24.558,27.729-27.711c11.081-3.169,22.154-3.169,27.705-3.169V183.705z"/>
+                            <path fill="#2B3382" d="M461.034,254.171c0-2.373,0.814-5.534-1.576-5.534l-15.841-0.788c-2.37,0-3.945,0-3.945,1.58l-0.791,118.771
+                                c-7.917,7.12-17.414,9.497-31.675,9.497c-18.209,0.798-29.286-18.213-30.104-41.161c-1.574-29.313,0-55.45,0-84.737
+                                c0-0.783-3.154-3.161-5.526-3.161h-14.255c0,0-3.162,3.953-3.162,4.756c0.792,15.823,6.317,114.009,10.289,121.135
+                                c1.581,2.372,4.737,7.135,7.919,11.086c3.161,3.169,7.134,5.547,11.87,8.716c10.289,6.328,42.754,3.95,55.435-7.122l0.792,13.45
+                                l-0.792,15.052c-0.791,15.059-0.791,39.58-23.758,40.365c-15.052,0-22.18-9.485-24.552-1.568c0,0.783-2.365,11.877-1.572,13.45
+                                c2.363,3.175,9.496,6.344,22.176,7.141c16.602,0.784,35.623-7.916,41.178-19.808c9.47-18.997,8.705-63.332,8.705-79.97
+                                L461.034,254.171z"/>
+                            <path fill="#F8991D" d="M198.96,80.763c0-1.573,0.783-2.359,0.783-3.156c0-1.573-0.783-3.167-3.156-3.963
+                                c-7.916-3.953-24.549-8.716-34.838-8.716c-26.151,0-44.357,16.641-44.357,41.177c0,44.349,64.936,37.229,64.936,68.102
+                                c0,14.242-10.289,21.369-22.97,21.369c-20.577,0-35.622-10.297-37.994-10.297c-0.789,0-2.391,0-3.18,2.391l-3.947,9.5
+                                c-0.789,0.79-0.789,1.581-0.789,3.167c0,5.534,30.069,14.261,44.33,14.261c25.338,0,47.519-14.261,47.519-41.972
+                                c0-45.929-65.725-36.432-65.725-68.898c0-14.242,10.287-19.789,22.178-19.789c15.025,0,27.711,7.92,29.286,7.92
+                                c1.58,0,2.369-0.792,3.953-3.169L198.96,80.763z"/>
+                            <path fill="#F8991D" d="M242.498,73.643c0-2.378-0.792-3.953-3.945-3.953h-15.052c-2.392,0-3.972,0.797-3.972,3.169v134.598
+                                c0,2.378,1.58,3.161,3.972,3.161h15.052c2.37,0,3.945-0.783,3.945-3.161V73.643z M247.262,17.423c0-9.499-7.92-17.423-17.417-17.423
+                                c-10.315,0-18.205,7.925-18.205,17.423c0,10.301,7.89,18.205,18.205,18.205C239.342,35.628,247.262,27.724,247.262,17.423"/>
+                            <path fill="#2B3382" d="M289.103,249.036h-4.737c-18.204,0.797-41.174,8.716-41.174,13.466c0,1.573,0,2.378,0.791,3.95l3.945,9.501
+                                c0.677,1.525,0.792,1.58,1.6,1.58c3.163,0,16.092-9.552,35.113-9.552c0.792,0,0.517,0.064,1.309,0.064
+                                c20.569,0,26.121,9.487,26.121,26.915v10.297c-6.341,0-16.625,0.788-27.705,2.369c-22.966,3.966-49.099,15.849-49.099,49.102
+                                c0,26.122,14.261,41.18,37.994,41.18h11.104c18.209-1.594,30.079-5.558,33.258-7.93c15.047-9.498,16.628-27.719,16.628-42.755
+                                v-57.01C334.251,264.88,322.36,249.036,289.103,249.036z M312.07,367.018c0,4.742-14.26,10.288-27.705,11.086h-4.76
+                                c-15.053,0-22.97-11.877-22.97-23.747c0-17.417,13.47-24.559,27.729-27.711c11.08-3.17,22.153-3.17,27.705-3.17V367.018z"/>
+                            <path fill="#F8991D" d="M53.835,65.724h-4.736C30.894,66.521,7.925,74.44,7.925,79.19c0,1.573,0,2.378,0.791,3.95l3.945,9.5
+                                c0.676,1.525,0.792,1.581,1.599,1.581c3.164,0,16.092-9.552,35.113-9.552c0.792,0,0.518,0.065,1.31,0.065
+                                c20.569,0,26.121,9.487,26.121,26.915v10.296c-6.341,0-16.625,0.789-27.705,2.37C26.133,128.281,0,140.164,0,173.417
+                                c0,26.122,14.26,41.179,37.994,41.179h11.104c18.208-1.594,30.078-5.558,33.258-7.929c15.047-9.499,16.628-27.72,16.628-42.756
+                                v-57.01C98.984,81.568,87.093,65.724,53.835,65.724z M76.804,183.705c0,4.742-14.261,10.289-27.705,11.087h-4.761
+                                c-15.052,0-22.969-11.878-22.969-23.748c0-17.417,13.469-24.558,27.729-27.711c11.08-3.169,22.153-3.169,27.705-3.169V183.705z"/>
+                            <g>
+                                <path fill="#2B3382" d="M528.043,267.757c0,6.389-2.263,11.846-6.786,16.369c-4.524,4.523-9.98,6.785-16.37,6.785
+                                    s-11.847-2.262-16.37-6.785c-4.524-4.523-6.786-9.98-6.786-16.369s2.262-11.84,6.786-16.354c4.523-4.515,9.98-6.772,16.37-6.772
+                                    s11.846,2.258,16.37,6.772C525.78,255.917,528.043,261.368,528.043,267.757z M524.949,267.757c0-5.578-1.96-10.332-5.88-14.263
+                                    s-8.646-5.896-14.183-5.896s-10.264,1.965-14.183,5.896c-3.92,3.931-5.88,8.685-5.88,14.263c0,5.58,1.96,10.338,5.88,14.277
+                                    c3.919,3.938,8.646,5.908,14.183,5.908s10.263-1.97,14.183-5.908C522.989,278.095,524.949,273.337,524.949,267.757z
+                                     M518.199,279.536h-6.073l-7.578-9.5h-3.286v9.5h-4.438v-24.5h7.476c1.678,0,3.004,0.063,3.979,0.188
+                                    c0.973,0.125,1.96,0.473,2.961,1.045c1.07,0.607,1.848,1.34,2.33,2.196c0.482,0.857,0.724,1.956,0.724,3.294
+                                    c0,1.787-0.495,3.251-1.485,4.394s-2.279,2.036-3.867,2.679L518.199,279.536z M509.418,262.052c0-0.661-0.106-1.232-0.321-1.715
+                                    c-0.213-0.482-0.588-0.894-1.123-1.233c-0.445-0.286-0.945-0.478-1.498-0.576s-1.266-0.147-2.139-0.147h-3.075v8.281h2.62
+                                    c0.855,0,1.658-0.084,2.407-0.254s1.354-0.461,1.818-0.871c0.464-0.412,0.798-0.885,1.003-1.421S509.418,262.892,509.418,262.052z"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <p class="navbar-text visible-xs-inline-block">Developer</p>         
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">PAYDOLLAR <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">PESOPAY</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SIAMPAY</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <div class="main-container">
+            <!-- Sidebar Menu -->
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <ul class="list-group">
+                    <!-- Menu without submenu -->
+                    <li class="mtop-40">
+                        <a id="ReleaseNote" href="#" class="list-group-item list-group-item-action menu-hover">
+                            <div class="d-flex w-100 justify-content-start align-items-center menu-hover">
+                                <span class="menu-collapsed pleft-5 pright-5">Release Note</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Submenu 1 -->
+                    <li>
+                        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Overview</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 1-->
+                    <div id='submenu1' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="Introduction" href="overview.html" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 2 -->
+                    <li>
+                        <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Connection Method</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu 2a-->
+                    <div id='submenu2' class="collapse sidebar-submenu">
+                        <li>
+                            <a href="#submenu2a" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">Client Post Through Browser</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 2a-->
+                        <div id='submenu2a' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="ConnectionScopeCompatibility" href="connection_cpb.html#ScopeCompatibility" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Scope and Compatibility</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionCreditPaymentFlow" href="connection_cpb.html#CreditPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Credit Card Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionCreditInstallmentPaymentFlow" href="connection_cpb.html#CreditInstallmentPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Credit Card with Installment Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionBillPaymentFlow" href="connection_cpb.html#BillPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Bill Payment FLow (BPM)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionPermataPaymentFlow" href="connection_cpb.html#PermataPaymentFlow" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Permata, BII and BCA Virtual Account (VA) Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionDefinitionParametersIntegrationPage" href="connection_cpb.html#DefinitionParametersIntegrationPage" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Definition of Parameters in the Integration</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionParametersSupporting3ds" href="connection_cpb.html#ParametersSupporting3DS" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Parameters for Supporting 3DS</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionExampleClientPostMethod" href="connection_cpb.html#ExampleClientPostMethod" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Example of Client Post Method (Source Code)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ConnectionKickOff" href="connection_cpb.html#KickOffClientPostThrough" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Kick Off</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                        <!-- Submenu 2b-->
+                        <li>
+                            <a href="#submenu2b" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">Direct Client Side Connection</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 2b-->
+                        <div id='submenu2b' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="DCSCreditDebitPaymentFlow" href="connection_dcs.html#CreditDebitCardPaymentFlowDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Credit and Debit Card Payment Flow for Visa, Masters, Diners, JCB, AMEX</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSOtherPaymentFlow" href="connection_dcs.html#OtherPaymentFlowDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Other Payment Flow</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSNon3dTransaction" href="connection_dcs.html#Non3DTransactionDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Non-3D transaction</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCS3dTransaction" href="connection_dcs.html#3DTransactionDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">3D transaction</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSIntegrationProcedures" href="connection_dcs.html#IntegrationProceduresDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Integration Procedures</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSDefinitionParameters" href="connection_dcs.html#DefinitionParametersDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Definition of Parameters in the Integration</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSParametersSupporting3ds" href="connection_dcs.html#ParametersSupporting3DSDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Parameters for Supporting 3DS 2.0</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSExampleConnectingGateway" href="connection_dcs.html#ExampleConnectingGatewayDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Example of connecting to our gateway (Direct Client Side Connection)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="DCSKickOff" href="connection_dcs.html#KickOffDirectClient" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Kick Off</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                        <!-- Submenu 2c-->
+                        <li>
+                            <a href="#submenu2c" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">Server Side Connection</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 3b-->
+                        <div id='submenu2c' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="SSDDefinitionParametersIntegration" href="connection_ssd.html#DefinitionParametersIntegrationPageServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Definition of Parameters in the Integration Page</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="SSDParametersSupporting3DS" href="connection_ssd.html#ParametersSupporting3DSServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Parameters for Supporting 3DS 2.0</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="SSDExampleSourceCode" href="connection_ssd.html#ExampleSourceCodeServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Example of Source Code</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="SSDKickOff" href="connection_ssd.html#KickOffServerSide" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-30">Kick Off</h5>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    
+                    <!-- Submenu 4-->
+                    <li>
+                        <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Data Feed Handling</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 4-->
+                    <div id='submenu4' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="DFDefinitionParameters" href="data_feed.html#DefinitionParameters" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Definition of parameters in the output of data feed</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="DFDataFeedSetUp" href="data_feed.html#DataFeedSetUp" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Data feed set up</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="DFSampleDataFeed" href="data_feed.html#SampleDataFeedPage" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sample data feed</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 5-->
+                    <li>
+                        <a href="#submenu5" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Transaction Security by Secure Hash</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 5-->
+                    <div id='submenu5' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="TransactionIntroduction" href="transaction.html#IntroductionTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionBasicFlowSecureHash" href="transaction.html#BasicFlowSecureHashTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Basic flow of secure hash</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionClientLibrary" href="transaction.html#ClientLibraryTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Client library provided by paydollar</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionGeneratingVerifyingSecureHash" href="transaction.html#GeneratingVerifyingSecureHashManually" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Generating and verifying secure hash manually</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="TransactionEnableSecureHash" href="transaction.html#EnableSecureHashTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Enable secure hash function of your merchant account</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 6-->
+                    <li>
+                        <a href="#submenu6" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Multi-Currency Processing Service</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 6-->
+                    <div id='submenu6' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="MCPIntroduction" href="mcp.html#IntroductionMultiCurrency" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPSimpleCurrencyCoversion" href="mcp.html#SimpleCurrencyConversionMultiCurrency" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Simple currency conversion (scp)</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPSampleCurrencyCoversion" href="mcp.html#SampleCurrencyConversionMultiCurrency" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sample currency conversion (scp) sample transaction screen</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPMultiCurrencyPricing" href="mcp.html#MultiCurrencyPricing" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Multi-currency pricing (mcp)</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="MCPMultiCurrencyPricingSampleTransaction" href="mcp.html#MultiCurrencyPricingSampleTransaction" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Multi-currency pricing (mcp) sample transaction screen</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 7-->
+                    <li>
+                        <a href="#submenu7" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Functions of Merchant API</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 7-->
+                    <div id='submenu7' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="APIIntroduction" href="api.html#IntroductionAPIFunctions" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Introduction of api functions</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APICaptureAuthorizedPayment" href="api.html#CaptureAuthorizedPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Capture authorized payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIVoidAcceptedPayment" href="api.html#VoidAcceptedPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Void accepted payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIRequestRefund" href="api.html#RequestRefundAcceptedPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Request refund for accepted payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIQueryPaymentStatus" href="api.html#QueryPaymentStatusAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Query payment status</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APIQueryRequestLog" href="api.html#QueryRequestLogAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Query request log</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APICancelPayment" href="api.html#CancelPaymentAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Cancel payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APISettlementReportRequest" href="api.html#SettlementReportRequestAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Settlement report request</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="APISampleSourceCode" href="api.html#SampleSourceCodeAPI" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sample source code of html server-side posting java</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 8-->
+                    <li>
+                        <a href="#submenu8" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Exceptional Transaction Handling</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 8-->
+                    <div id='submenu8' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="ExceptionUnsuccessfulDataFeed" href="exception.html#UnsuccessfulDataFeedExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Unsuccessful data feed</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="ExceptionUnsuccessfulRedirection" href="exception.html#UnsuccessfulRedirectionExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Unsuccessful redirection to successurl / failurl / cancelurl</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="ExceptionIncomplete3dAuthentication" href="exception.html#Incomplete3dAuthenticationExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Incomplete 3d authentication transactions by customer</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="ExceptionIncomplete99Bill" href="exception.html#Incomplete99BillExceptional" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Incomplete 99bill / alipay / chinapay / pps / tenpay / scb / bay / ktb / uob / tmb / bbl ibanking / upop / m2u / cimbclick / wechat transactions by customer</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 9-->
+                    <li>
+                        <a href="#submenu9" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">PaySDK IOS Moile SDK</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 9-->
+                    <div id='submenu9' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="IOSIntegrationSteps" href="sdk_ios.html#SDKIntegrationStepsIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sdk integration steps</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSWebviewPaymentCall" href="sdk_ios.html#WebViewPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Webview payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSDirectPaymentCall" href="sdk_ios.html#DirectPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Direct payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSInstallmentPayment" href="sdk_ios.html#InstallmentPaymentIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Installment payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSSchedulePay" href="sdk_ios.html#SchedulePayIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Schedule pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSMemberPay" href="sdk_ios.html#MemberPayIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Member pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSPromoPay" href="sdk_ios.html#PromoPayIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Promo pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSAliPayGlobalPayment" href="sdk_ios.html#AlipayGlobalPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay global payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSAliPayHKPayment" href="sdk_ios.html#AlipayHKPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay hk payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSAliPayChinaPayment" href="sdk_ios.html#AlipayHKPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay china payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOSWechatPayment" href="sdk_ios.html#WeChatPayPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Wechat payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="IOS3dsPayment" href="sdk_ios.html#3DSPaymentCallIOS" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collasped font-14 pleft-60 pright-30">3ds 2.0 payment call</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 10-->
+                    <li>
+                        <a href="#submenu10" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">PaySDK Android Mobile SDK</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 10-->
+                    <div id='submenu10' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="AndroidIntegrationSteps" href="sdk_android.html#SDKIntegrationStepsAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Sdk integration steps</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidWebviewPaymentCall" href="sdk_android.html#WebviewPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Webview payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidDirectPaymentCall" href="sdk_android.html#DirectPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Direct payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidInstallmentPayment" href="sdk_android.html#InstallmentPaymentAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Installment payment</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidSchedulePay" href="sdk_android.html#SchedulePayAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Schedule pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidMemberPay" href="sdk_android.html#MemberPayAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Member pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidPromoPay" href="sdk_android.html#PromoPayAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Promo pay</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidAliPayGlobalPayment" href="sdk_android.html#AliPayGlobalPaymentAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay global payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidAliPayHKPayment" href="sdk_android.html#AlipayHKPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay hk payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidAliPayChinaPayment" href="sdk_android.html#AliPayChinaPaymentAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Alipay china payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="AndroidWechatPayment" href="sdk_android.html#WeChatPayPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Wechat payment call</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="Android3dsPayment" href="sdk_android.html#3DSPaymentCallAndroid" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">3ds 2.0 payment call</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 11-->
+                    <li>
+                        <a href="#submenu11" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Frequently Asked Questions</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 11-->
+                    <div id='submenu11' class="collapse sidebar-submenu">
+                        <li>
+                            <a id="FAQSystemSetup" href="faq.html#SystemSetupFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">System setup</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQCommonProblems" href="faq.html#CommonProblemsFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Common problems</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQDataFeed" href="faq.html#DataFeedFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Data feed</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQ3dSecureAuthentication" href="faq.html#3DSecureAuthenticationFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">3-d secure authentication</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQDataSecurity" href="faq.html#DataSecurityFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Data security</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="FAQSupport" href="faq.html#SupportFAQ" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">Support</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 12-->
+                    <li>
+                        <a href="#submenu12" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa fa-caret-right fa-fw"></i>
+                                <span class="menu-collapsed">Appendix A</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Submenu content 12a-->
+                    <div id='submenu12' class="collapse sidebar-submenu">
+                        <li>
+                            <a href="#submenu12a" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">PayDollar Payment Response Code</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 12a-->
+                        <div id='submenu12a' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="AppendixPrimaryResponseCode" href="appendix_response_code.html#PrimaryResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Primary Response Code (PRC)</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="AppendixSecondaryResponseCode" href="appendix_response_code.html#SecondaryResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Secondary Response Code (SRC)</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                         <!-- Submenu content 12b-->
+                        <li>
+                            <a href="#submenu12b" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-start align-items-center pleft-20">
+                                    <i class="fa fa-caret-right fa-fw"></i>
+                                    <span class="menu-collapsed">List of Response Code</span>
+                                    <span class="submenu-icon ml-auto"></span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Submenu content 12b-->
+                        <div id='submenu12b' class="collapse sidebar-submenu" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li>
+                                <a id="ListBanksResponseCode" href="appendix_response_code_list.html#BanksResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Bank's Response Code</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ListResponseCodePayDollar" href="appendix_response_code_list.html#AppendixListResponseCodePayDollar" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Response Code from PayDollar</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="ListOtherResponseCode" href="appendix_response_code_list.html#OtherResponseCode" class="list-group-item list-group-item-action">
+                                    <h5 class="menu-collapsed font-14 pleft-80 pright-50">Other Response Code</h5>
+                                </a>
+                            </li>
+                        </div>
+
+                        <!-- Submenu content 12-->
+                        <li>
+                            <a id="ListCountryCode" href="appendix_country_code.html#AppendexListCountryCode" class="list-group-item list-group-item-action">
+                                <h5 class="menu-collapsed font-14 pleft-60 pright-30">List of Country Code</h5>
+                            </a>
+                        </li>
+                    </div>
+
+                    <!-- Submenu 13-->
+                    <li class="mtop-50">
+                        <a id="DownloadPDF" href="https://www.paydollar.com/pdf/op/enpdintguide.pdf" download="HTML 5 PDF" target="_blank" class="list-group-item list-group-item-action menu-hover">
+                            <div class="d-flex w-100 justify-content-start align-items-center menu-hover">
+                                <span class="menu-collapsed pleft-5 pright-5">Download PDF</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Submenu 14-->
+                    <li>
+                        <a id="ContactUs" href="mailto:sales@asiapay.com?subject=PayGate Integration Guide version no.:3.61" class="list-group-item list-group-item-action menu-hover">
+                            <div class="d-flex w-100 justify-content-start align-items-center menu-hover pbottom100">
+                                <span class="menu-collapsed pleft-5 pright-5">Contact Us</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul><!-- List Group END-->
+            </div>
+
+            <!-- Main Content -->
+            <div id="main">
+                <div class="main-header-fixed">
+                    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+                    <p class="font-12 card-small-text-title"><i>PayGate Integration Guide version no.:3.61</i></p>
+                </div>
+                <div class="card-container shadow-sm bg-white">
+                    <div class="dropdown btn-language">
+                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            English
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right hover" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item font-12" href="#">Traditional Chinese</a>
+                            <a class="dropdown-item font-12" href="#">Simplified Chinese</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <ul id="ScopeCompatibility" class="list-style mbottom-0">
+                                <li><span class="card-title">Client Post Through Browser</span></li>
+                            </ul>
+                            <p>It is the most popular connection method among merchants. The advantage of this connection method is 
+                                simple and speedy. On the other hand, payment transaction flow is ready to use. Merchant can kick
+                                off the web site on-the-fly with just a small scale integration.
+                            </p>
+                            <span class="card-title" style="color: #f78704;">Scope and Compatibility</span>
+                            <p>This connectin is designed for merchants who have Online Shopping Cart System.
+                                The routine is HTML-based with Javascript and should be widely applicable to on-line shopping cart software
+                                and architecture whose technical specifications and varieties are beyond the scope of this document. Compatibility
+                                with shopping cart software is yet to be exclusively given and would not be includein the
+                            </p>
+                            <p>The compatibility version of the software code is as follow: </p>
+                            <table class="table table-sm table-responsive-sm table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 20%;">Software Code</th>
+                                        <th scope="col" style="width: 20%;">Version</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>HTML</b></td>
+                                        <td>4.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Javascript</b></td>
+                                        <td>1.3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>The compatibility version of the software code with popular browser software is as follow: </p>
+                            <table class="table table-sm table-responsive-sm table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 50%;">Software Code</th>
+                                        <th scope="col" style="width: 50%;">Version</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Microsoft Internet Explorer</b></td>
+                                        <td>11 or above</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Mozilla Firefox</b></td>
+                                        <td>27 or above</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Google Chrome</b></td>
+                                        <td>30 or above</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Safari</b></td>
+                                        <td>7 or above</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="CreditPaymentFlow" class="list-style">
+                                <li><span class="card-title">Credit Card Payment Flow</span></li>
+                            </ul>
+                            <img src="../../images/credit-payment-flow.jpg" class="img-fluid" alt="Credit Card Payment Flow" width="100%">
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="CreditInstallmentPaymentFlow" class="list-style">
+                                <li><span class="card-title">Credit Card with Installment Payment Flow</span></li>
+                            </ul>
+                            <img src="../../images/credit-installment-payment-flow.jpg" class="img-fluid" alt="Credit Card with Installment Payment Flow" width="100%">
+                        </div>
+
+                        <div class="card-body">
+                            <ul class="list-style">
+                                <li><span class="card-title">99BILL, ALIPAY, CHINAPAY, PAYPAL, PPS, TENPAY, SCB, BAY, KTB, UOB, TMB, BBL iBanking, UPOP, M2U, CIMBCLICK, OCTOPUS, WECHAT, ONEPAY Payment Flow</span></li>
+                            </ul>
+                            <img src="../../images/99bill-payment-flow.jpg" class="img-fluid" alt="99BILL Payment Flow" width="100%">
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="BillPaymentFlow" class="list-style">
+                                <li><span class="card-title">Bill Payment Flow (BPM)</span></li>
+                            </ul>
+                            <img src="../../images/bill-payment-flow.jpg" class="img-fluid" alt="Bill Payment Flow" width="100%">
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="PermataPaymentFlow" class="list-style">
+                                <li><span class="card-title">Permata, BII and BCA Virtual Account (VA) Payment Flow </span></li>
+                            </ul>
+                            <p><b>Step 1: Customer generate Virtual Account online</b></p>
+                            <img src="../../images/permata-payment-flow-step-1.jpg" class="img-fluid" alt="Permata Payment Flow Step 1" width="100%">
+                            <p class="mtop-30"><b>Step 2: Customer pay to Virtual Account offline before expiry date</b></p>
+                            <img src="../../images/permata-payment-flow-step-2.jpg" class="img-fluid" alt="Permata Payment Flow Step 2" width="100%">
+                            <p class="mtop-20">It is notable that the software codes of the payment routine, whose example is as given,
+                                should be embedded into the integration page, as in above, which should be able to
+                                generate the sum of purchase from the previous shopping practice of the user. The
+                                subsequent parts of the flow would be directed to system architecture in which the payment
+                                details are to be submitted by the user, and handled for settlement and clearance. 
+                            </p>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="DefinitionParametersIntegrationPage" class="list-style">
+                                <li><span class="card-title">Definition of Parameters in the Integration Page</span></li>
+                            </ul>
+                            <p>The following are the parameters for integration. PayDollar PayGate is case sensitive. Make sure the
+                                typeface is correct. When a transaction is finished, the system will return customer a payment message.
+                                Merchant can create static HTML pages to display the message. If merchant’s web site supports data
+                                feed, the system can return payment message as shown in the following table. 
+                            </p>
+                            <table class="table table-sm table-responsive-sm table-bordered table-hover font-14">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" colspan="1">Parameters</th>
+                                        <th scope="col" width="18%">Data Type</th>
+                                        <th scope="col" colspan="1">Descriptions</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Required Parameter ( with UTF-8 Encoding ) for connect to our payment page</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>orderRef</b></td>
+                                        <td>Text (35)</td>
+                                        <td>Merchant‘s Order Reference Number</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>currCode</b></td>
+                                        <td>Text (3)</td>
+                                        <td width="70%">The currency of the payment: 
+                                            <ul class="list-style">
+                                                <li class="inline-list">“344” – HKD</li>
+                                                <li class="inline-list">“840” – USD</li>
+                                                <li class="inline-list">“702” – SGD</li>
+                                                <li class="inline-list">“156” – CNY (RMB)</li>
+                                                <li class="inline-list">“392” – JPY</li>
+                                                <li class="inline-list">“901” – TWD</li>
+                                                <li class="inline-list">“036” – AUD</li>
+                                                <li class="inline-list">“978” – EUR</li>
+                                                <li class="inline-list">“826” – GBP</li>
+                                                <li class="inline-list">“124” – CAD</li>
+                                                <li class="inline-list">“446” – MOP</li>
+                                                <li class="inline-list">“608” – PHP</li>
+                                                <li class="inline-list">“764” – THB</li>
+                                                <li class="inline-list">“458” – MYR</li>
+                                                <li class="inline-list">“360” – IDR</li>
+                                                <li class="inline-list">“410” – KRW</li>
+                                                <li class="inline-list">“682” – SAR</li>
+                                                <li class="inline-list">“554” – NZD</li>
+                                                <li class="inline-list">“784” – AED</li>
+                                                <li class="inline-list">“096” – BND</li>
+                                                <li class="inline-list">“704” – VND</li>
+                                                <li class="inline-list">“356” – INR</li>
+                                            </ul>
+                                            <ul class="list-style mbottom-0">
+                                                <li><b>Remark:</b></li>
+                                                <li>mpsMode = SCP, the amount should be calculated in foreign currency.</li>
+                                                <li>mpsMode = MCP, the amount should be calculated in base currency.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>amount</b></td>
+                                        <td>Number (12,2)</td>
+                                        <td>The total amount you want to charge the customer for the provided currency
+                                            <ul class="list-style mbottom-0 mtop-1">
+                                                <li><b>Remark:</b></li>
+                                                <li>mpsMode = SCP, the amount should be calculated in foreign currency.</li>
+                                                <li>mpsMode = MCP, the amount should be calculated in base currency.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>lang</b></td>
+                                        <td>Text (1)</td>
+                                        <td>The language of the payment page 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="inline-list">“E” – English</li>
+                                                <li class="inline-list">“C” – Traditional Chinese</li>
+                                                <li class="inline-list">“X” – Simplified Chinese</li>
+                                                <li class="inline-list">“J” – Japanese</li>
+                                                <li class="inline-list">“T” – Thai</li>
+                                                <li class="inline-list">“F” – French</li>
+                                                <li class="inline-list">“G” – German</li>
+                                                <li class="inline-list">“R” – Russian</li>
+                                                <li class="inline-list">“S” – Spanish</li>
+                                                <li class="inline-list">“V” – Vietnamese</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>cancelUrl</b></td>
+                                        <td>Text (300)</td>
+                                        <td>A Web page address you want us to redirect upon the transaction being cancelled by your customer
+                                            <b>(For display purpose only. DO NOT use this URL to update your system. Please use DataFeed for this purpose.)</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>failUrl</b></td>
+                                        <td>Text (300)</td>
+                                        <td>A Web page address you want us to redirect upon the transaction being rejected by us. 
+                                            <b>(For display purpose only. DO NOT use this URL to update your system. Please use DataFeed for this purpose.)</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>successUrl</b></td>
+                                        <td>Text (300)</td>
+                                        <td>A Web page address you want us to redirect upon the transaction being accepted by us  
+                                            <b>(For display purpose only. DO NOT use this URL to update your system. Please use DataFeed for this purpose.)</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>merchantId</b></td>
+                                        <td>Number</td>
+                                        <td>The merchant ID we provide to you.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>payType</b></td>
+                                        <td>Text(1) <br> (“N”, ”H”)</td>
+                                        <td>The payment type:
+                                            <ul class="list-style">
+                                                <li class="block-list">”N” – Normal Payment (Sales)</li>
+                                                <li class="block-list">”H” – Hold Payment (Authorize only)</li>
+                                            </ul>
+                                            <p>For merchants who use authorize mode, please be reminded to perform
+                                                the CAPTURE action as soon as the transaction is confirmed as valid.
+                                                Once captured, the customer’s credit card will be debited in coming bank
+                                                settlement processing. If the merchant does not capture/reverse the
+                                                authorized transaction over 14 days, the credit limit will be released to the
+                                                cardholder after a time period which is subjected to card issuing bank 
+                                            </p>
+                                            <p>Merchant may capture/reverse the authorized transaction in the merchant
+                                                administration site > Operation > Transaction Detail. 
+                                            </p>
+                                            <p class="mbottom-0"><b>Remark:</b> Hold Payment is not available for 99BILL, ALIPAY, CHIANPAY,
+                                                PAYPAL, PPS, TENPAY, WECHAT, MEPS,OCTOPUS
+                                            </p>          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>payMethod</b></td>
+                                        <td>Text</td>
+                                        <td>The payment method:  
+                                            <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+                                                <li class="block-list">“ALL” – All the available payment method</li>
+                                                <li class="block-list">“CC” – Credit Card Payment</li>
+                                                <li class="block-list">“VISA” – Visa Payment </li>
+                                                <li class="block-list">“Master” – MasterCard Payment</li>
+                                                <li class="block-list">“JCB” – JCB Payment</li>
+                                                <li class="block-list">“AMEX” – AMEX Payment</li>
+                                                <li class="block-list">“Diners” – Diners Club Payment</li>
+                                                <li class="block-list">“PPS” – PayDollar PPS Payment</li>
+                                                <li class="block-list">“PAYPAL” – PayPal By PayDollar Payment</li>
+                                                <li class="block-list">“CHINAPAY” – China UnionPay By PayDollar Payment</li>
+                                                <li class="block-list">“ALIPAY” – ALIPAY By PayDollar Payment</li>
+                                                <li class="block-list">“TENPAY” – TENPAY BY PayDollar Payment</li>
+                                                <li class="block-list">“99BILL” – 99BILL BY PayDollar Payment</li>
+                                                <li class="block-list">“MEPS” – MEPS BY PayDollar Payment</li>
+                                                <li class="block-list">“SCB” –SCB (SCB Easy) BY PayDollar Payment</li>
+                                                <li class="block-list">“BPM” –Bill Payment BY PayDollar Payment</li>
+                                                <li class="block-list">“KTB” –Krung thai Bank (KTB Online) BY PayDollar Payment</li>
+                                                <li class="block-list">“UOB” –United Oversea bank BY PayDollar Payment</li>
+                                                <li class="block-list">“KRUNGSRIONLINE” –Bank of Ayudhya (KRUNGSRIONLINE) BY PayDollar Payment</li>
+                                                <li class="block-list">“TMB” –TMB Bank BY PayDollar Payment</li>
+                                                <li class="block-list">“IBANKING” –Bangkok Bank iBanking BY PayDollar Payment</li>
+                                                <li class="block-list">“UPOP” – UPOP BY PayDollar Payment</li>
+                                                <li class="block-list">“M2U” – M2U BY PayDollar Payment</li>
+                                                <li class="block-list">“CIMBCLICK” – CIMBCLICK BY PayDollar Payment</li>
+                                                <li class="block-list">“OCTOPUS” – OCTOPUS BY PayDollar Payment</li>
+                                                <li class="block-list">“WECHAT” – WECHAT BY PayDollar Payment</li>
+                                                <li class="block-list">“ONEPAY” – ONEPAY BY PayDollar Payment</li>
+                                                <li class="block-list">“VCO” – VISA Checkout Payment</li>
+                                                <li class="block-list">“MP” – MasterPass Payment</li>
+                                                <li class="block-list">“WELEND” – WELEND BY PayDollar Payment</li>
+                                                <li class="block-list">“MOMOPAY” – MoMo eWallet Payment</li>
+                                                <li class="block-list">“SAMSUNG” – Samsung Pay Payment</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Optional Parameter for installment</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>installment_service</b></td>
+                                        <td>Text (1) <br> (“T”,”F”)</td>
+                                        <td>Installment service indicator</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>installment_period</b></td>
+                                        <td>Text (20)</td>
+                                        <td>The payment type:
+                                            <p>
+                                                <ul class="list-style mtop-2">
+                                                    <li class="block-list">In number of months</li>
+                                                    <li class="block-list">*Not provide will Enable installment selection during the payment</li>
+                                                    <li class="block-list">*Multiple period with separator “|” only for payment method “WELEND“</li>
+                                                </ul>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>installOnly</b></td>
+                                        <td>Text (1) <br> (“T”,”F”)</td>
+                                        <td>Control the mandatory of Installment payment</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Optional Parameter for airline data</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>airline_service</b></td>
+                                        <td>Text (1) <br> (“T”,”F”)</td>
+                                        <td>Airline service indicator</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>airline_ticketNumber</b></td>
+                                        <td>Text (13)</td>
+                                        <td>Air ticket number</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Optional Parameter for Multi Currency Pricing (MCP)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>mpsMode</b></td>
+                                        <td>Text(3)</td>
+                                        <td>The Multi-Currency Processing Service (MPS) Mode: 
+                                            <ul class="list-style">
+                                                <li class="block-list">“NIL” or not provide – Disable MPS (merchant not using MPS)</li>
+                                                <li class="block-list">“SCP” – Enable MPS with ‘Simple Currency Conversion’</li>
+                                                <li class="block-list">“DCC” – Enable MPS with ‘Dynamic Currency Conversion’</li>
+                                                <li class="block-list">“MCP” – Enable MPS with ‘Multi Currency Pricing’</li>
+                                            </ul>
+                                            <p class="mbottom-0">For merchant who applied MPS function</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>multiRateID</b></td>
+                                        <td>Text (12)</td>
+                                        <td>Unique Rate ID 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">*Returned from API function “MCPMultiRateEnquiry”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>mpsExRate</b></td>
+                                        <td>Number (10,4)</td>
+                                        <td>Exchange rate between the merchant’s base currency and the foreign currency.
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">*Returned from API function “MCPMultiRateEnquiry”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>foreignCurrCode</b></td>
+                                        <td>Text (3)</td>
+                                        <td>Foreign currency code</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>foreignAmount</b></td>
+                                        <td>Number (12,2)</td>
+                                        <td>Calculated foreign amount 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list"><b>*The foreign amount should be converted from a base amount with minimum value HKD10 / MOP10 to avoid tolerance check failure.</b></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Optional Parameter for Promotion</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>promotion</b></td>
+                                        <td>Text(1); <br> (“T” or “F”)</td>
+                                        <td>Enable / Disable the promotion</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>promotionCode</b></td>
+                                        <td>Text(8);</td>
+                                        <td>The promotion campaign code</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>promotionRuleCode</b></td>
+                                        <td>Text(8);</td>
+                                        <td>The promotion rule code</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>promotionOriginalAmt</b></td>
+                                        <td>Number (12,2)</td>
+                                        <td>The promotion original amount</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Optional Parameter for connect to our payment page</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>remark</b></td>
+                                        <td>Text (200)</td>
+                                        <td>A remark field for you to store additional data that will not show on the transaction web page</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>redirect</b></td>
+                                        <td>Number</td>
+                                        <td>Number of seconds auto-redirection to merchant’s site takes place at PayDollar’s Payment Success / Fail page</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>oriCountry</b></td>
+                                        <td>Number(3)</td>
+                                        <td>Origin Country Code
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Example: </li>
+                                                <li class="block-list">344 – “HK”</li>
+                                                <li class="block-list">840 – “US”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>destCountry</b></td>
+                                        <td>Number(3)</td>
+                                        <td>Destination Country Code 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Example: </li>
+                                                <li class="block-list">344 – “HK”</li>
+                                                <li class="block-list">840 – “US”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>secureHash</b></td>
+                                        <td>Text (40)</td>
+                                        <td>
+                                            <p>Secure hash is used to authenticate the integrity of the transaction information and the identity of the merchant. It is calculated by hashing
+                                                the combination of various transaction parameters and the Secure Hash
+                                                Secret.
+                                            </p>  
+                                            <p class="mbottom-0">*Applies to merchants who registered this function only. For more
+                                                information, please refer to section 4. 
+                                            </p>        
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>print</b></td>
+                                        <td>Text(2) ; (“no”)</td>
+                                        <td>Disable the print function at payment result page.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>failRetry</b></td>
+                                        <td>Text(2) ; (“no”)</td>
+                                        <td>Disable the retry function when the transaction is rejected</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>timeoutValue</b></td>
+                                        <td>Number</td>
+                                        <td>Timeout Value in second, only for OCTOPUS payment and ranged 180 and 7200</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>hiddenAmount</b></td>
+                                        <td>Text (1) <br> (“T”,”F”)</td>
+                                        <td>Flag to control the display of amount. “T” for showing amount and “F” for not showing display of amount. *Enable to approved merchant only.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>expDateCheck</b></td>
+                                        <td>Number</td>
+                                        <td>Value to control the expiry date checking. Eg. If “1” is submitted, the card
+                                            expiry date must not be expired in one month. Only integer is allowed and
+                                            minimum value is “1” and maximum value is “192”. *Enable to approved
+                                            merchant only. 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>payMode</b></td>
+                                        <td>Text(2)</td>
+                                        <td>Payment Mode 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">“EC” - Electronic Commerce (Default)</li>
+                                                <li class="block-list">“MO” - Mail Order</li>
+                                                <li class="block-list">“RC” - Recurring</li>
+                                            </ul> 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>orderPhoneNo</b></td>
+                                        <td>Text(30)</td>
+                                        <td>Phone Number of order</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="ParametersSupporting3DS" class="list-style">
+                                <li><span class="card-title">Parameters for Supporting 3DS 2.0</span></li>
+                            </ul>
+                            <p>The following are the parameters especially for 3DS 2.0. Merchant shall fulfill the parameters
+                                requirement to start using 3DS 2.0. The parameters are case sensitive and should be in UTF-8
+                                encoding. 
+                            </p>
+                            <table class="table table-sm table-responsive-sm table-bordered table-hover font-14">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" colspan="1">Parameters</th>
+                                        <th scope="col" colspan="1" width="15%">Data Type</th>
+                                        <th scope="col" colspan="1">Mandatory</th>
+                                        <th scope="col" colspan="1">Descriptions</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Basic Parameters</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>threeDSTransType</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Transaction type.
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Select the most suitable one.</li>
+                                                <li class="block-list">“01” – Goods/ Service Purchase</li>
+                                                <li class="block-list"><i>* Default value if threeDSTransType not provided.</i></li>
+                                                <li class="block-list">“03” – Check Acceptance</li>
+                                                <li class="block-list">“10” – Account Funding</li>
+                                                <li class="block-list">“11” – Quasi-Cash Transaction</li>
+                                                <li class="block-list">“28” – Prepaid Activation and Load</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSustomerEmail</b></td>
+                                        <td>Text (254)</td>
+                                        <td>No</td>
+                                        <td>The customer’s email address 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">* Strongly suggest to provide if available.</li>
+                                                <li class="block-list">Shall meet requirements of Section 3.4 of IETF RFC 5322.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSMobilePhoneCountryCode</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Customer’s mobile phone number country code. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Provide if available.</li>
+                                                <li class="block-list">If “threeDSMobilePhoneCountryCode” is provided, “threeDSMobilePhoneNumber” should also be provided.</li>
+                                                <li class="block-list">e.g. “852” – Hong Kong</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSMobilePhoneNumber</b></td>
+                                        <td>Text (15)</td>
+                                        <td>No</td>
+                                        <td>Customer’s mobile phone number.  
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Provide if available.</li>
+                                                <li class="block-list">If “threeDSMobilePhoneNumber” is provided, “threeDSMobilePhoneCountryCode” should also be provided.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSHomePhoneCountryCode</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Customer’s home phone number country code.   
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Provide if available.</li>
+                                                <li class="block-list">If “threeDSHomePhoneCountryCode” is provided, “threeDSHomePhoneNumber” should also be provided.</li>
+                                                <li class="block-list">e.g. “852” – Hong Kong</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSHomePhoneNumber</b></td>
+                                        <td>Text (15)</td>
+                                        <td>No</td>
+                                        <td>Customer’s home phone number.    
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Provide if available.</li>
+                                                <li class="block-list">If “threeDSHomePhoneNumber” is provided, “threeDSHomePhoneCountryCode” should also be provided.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSWorkPhoneCountryCode</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Customer’s work phone number country code.     
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Provide if available.</li>
+                                                <li class="block-list">If “threeDSWorkPhoneCountryCode” is provided, “threeDSWorkPhoneNumber” should also be provided.</li>
+                                                <li class="block-list">e.g. “852” – Hong Kong</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSWorkPhoneNumber</b></td>
+                                        <td>Text (15)</td>
+                                        <td>No</td>
+                                        <td>Customer’s work phone number.      
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Provide if available.</li>
+                                                <li class="block-list">If “threeDSWorkPhoneNumber” is provided, “threeDSWorkPhoneCountryCode” should also be provided.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSIsFirstTimeItemOrder</b></td>
+                                        <td>Text (1)</td>
+                                        <td>No</td>
+                                        <td>Flag to show if the customer is re-ordering the item / product. i.e. purchasing the same item / product 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Provide only if the payment related to purchase item / product.</li>
+                                                <li class="block-list">“T” – It is the first time the customer purchases this item / product.</li>
+                                                <li class="block-list">“F” – It is the NOT the first time the customer purchases the item / product, it is re-ordering.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSChallengePreference</b></td>
+                                        <td>Text(2)</td>
+                                        <td>No</td>
+                                        <td>Indicates whether a challenge is requested for this transaction. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">“01” – No preference</li>
+                                                <li class="block-list"><i>* Default value if threeDSChallengePreference not provided.</i></li>
+                                                <li class="block-list">“02” – No challenge requested <span style="color: #FF0000;"><b>*</b></span></li>
+                                                <li class="block-list">“03” – Challenge requested (Merchant preference)</li>
+                                                <li class="block-list">“05” – No challenge requested (transactional risk analysis is already performed) <span style="color: #FF0000;"><b>*</b></span></li>
+                                                <li class="block-list">“06” – No challenge requested (Data share only) <span style="color: #FF0000;"><b>*</b></span></li>
+                                                <li class="block-list">“07” – No challenge requested (strong consumer authentication is already performed) <span style="color: #FF0000;"><b>*</b></span></li>
+                                                <li class="block-list">“08” – No challenge requested (utilise whitelist exemption if no challenge required) <span style="color: #FF0000;"><b>*</b></span></li>
+                                                <li class="block-list">“09” – Challenge requested (whitelist prompt requested if challenge required) <span style="color: #FF0000;"><b>*</b></span></li>
+                                                <li class="block-list" style="color: #ff0000;"><b>** If “No challenge requested” options are selected, the chargeback liability shift to merchant.</b></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Recurring / Installment Payment Related (Provide only if it is a recurring / installment payment)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSRecurringFrequency</b></td>
+                                        <td>Text (4)</td>
+                                        <td>Yes (Only for recurring / installment payment) </td>
+                                        <td>Minimum number of days between payment. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “30” – 30 days between payments.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSRecurringExpiry</b></td>
+                                        <td>Text (8)</td>
+                                        <td>Yes (Only for recurring / installment payment)</td>
+                                        <td>Date after which no further payment shall be performed. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Billing Address Related (Provide only if billing address is available)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSBillingCountryCode</b></td>
+                                        <td>Text (3)</td>
+                                        <td>Yes (Only if billing address is available)</td>
+                                        <td>Payment cardholder billing country. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Shall be the ISO 3166-1 numeric three-digit country code.</li>
+                                                <li class="block-list">e.g. “344” – Hong Kong, “840” – US</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSBillingState</b></td>
+                                        <td>Text (3)</td>
+                                        <td>Yes (Only if billing address is available)</td>
+                                        <td>Payment cardholder billing state 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Should be the country subdivision code defined in ISO 3166-2.</li>
+                                                <li class="block-list">Provide if available, as some countries do not have subdivision code.</li>
+                                                <li class="block-list">e.g. “PE” – Prince Edward Island of California</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSBillingCity</b></td>
+                                        <td>Text (50)</td>
+                                        <td>No</td>
+                                        <td>Payment cardholder billing city 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “Hong Kong”</li><
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSBillingLine1</b></td>
+                                        <td>Text (50)</td>
+                                        <td>Yes (Only if billing address is available)</td>
+                                        <td>Payment cardholder billing address line 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSBillingLine2</b></td>
+                                        <td>Text (50)</td>
+                                        <td>No</td>
+                                        <td>Payment cardholder billing address line 2 <br> Provide if available</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSBillingLine3</b></td>
+                                        <td>Text (50)</td>
+                                        <td>No</td>
+                                        <td>Payment cardholder billing address line 3 <br> Provide if available</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSBillingPostalCode</b></td>
+                                        <td>Text (16)</td>
+                                        <td>No</td>
+                                        <td>Payment cardholder billing postal code <br> Provide if available</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Shipping / Delivery Related (Provide only if the payment requires shipping / delivery)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSDeliveryTime</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>The delivering time for this purchase. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">“01” – Electronic Delivery</li>
+                                                <li class="block-list">“02” – Same day shipping</li>
+                                                <li class="block-list">“03” – Overnight shipping</li>
+                                                <li class="block-list">“04” – Two-day or more shipping</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSDeliveryEmail</b></td>
+                                        <td>Text (254)</td>
+                                        <td>No</td>
+                                        <td>The email recipient of the purchased product. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="blocklist">Provide only if the purchased product is using electronic delivery.</li><br>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingDetails</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Shipping details / type. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Select the most suitable one.</li>
+                                                <li class="block-list">“01” – Ship to cardholder’s billing address</li>
+                                                <li class="block-list">“02” – Ship to another verified address stored in merchant</li>
+                                                <li class="block-list">“03” – Ship to address that is different than the cardholder’s billing address</li>
+                                                <li class="block-list">“04” – Ship to Store / Pick-up at local store (Store address shall be populated in shipping address fields)</li>
+                                                <li class="block-list">“05” – Digital goods (includes online services, electronic gift cards and redemption codes)</li>
+                                                <li class="block-list">“06” – Travel and Event tickets, not shipped</li>
+                                                <li class="block-list">“07” – Other (for example, Gaming, digital services not shipped, e-media subscriptions, etc.) </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingCountryCode</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Shipping / delivery country. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Shall be the ISO 3166-1 numeric three-digit country code.</li>
+                                                <li class="block-list">e.g. “344” – Hong Kong, “840” – US</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingState</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Shipping / delivery state
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Should be the country subdivision code defined in ISO 3166-2</li>
+                                                <li class="block-list">e.g. “PE” – Prince Edward Island of California</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingCity</b></td>
+                                        <td>Text (50)</td>
+                                        <td>No</td>
+                                        <td>Shipping / delivery city. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “Hong Kong”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingLine1</b></td>
+                                        <td>Text (50)</td>
+                                        <td>No</td>
+                                        <td>Shipping / delivery address line 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingLine2</b></td>
+                                        <td>Text (50)</td>
+                                        <td>No</td>
+                                        <td>Shipping / delivery address line 2 <br> Provide (if available).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingLine3</b></td>
+                                        <td>Text (50)</td>
+                                        <td>No</td>
+                                        <td>Shipping / delivery address line 3 <br> Provide (if available).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSShippingPostalCode</b></td>
+                                        <td>Text (16)</td>
+                                        <td>No</td>
+                                        <td>Shipping / delivery postal code <br> Provide (if available).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSIsAddrMatch</b></td>
+                                        <td>Text (1)</td>
+                                        <td>No</td>
+                                        <td>Flag for comparing the billing address and shipping address. <br> Provide (if available).
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">“T” – Shipping address matches billing address</li>
+                                                <li class="block-list">“F” – Shipping address NOT match billing address</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Gift Card / Prepaid Card Purchase Related (Provide only if the purchase related to gift card / prepaid card)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSGiftCardAmount</b></td>
+                                        <td>Text (15)</td>
+                                        <td>No</td>
+                                        <td>Gift card / prepaid card purchase amount.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSGiftCardCurr</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Gift card / prepaid card purchase currency. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">ISO 4217 three-digit currency code.</li>
+                                                <li class="block-list">e.g. “344” – HKD</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSGiftCardCount</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Number of gift card / prepaid card purchasing. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “12” – Purchasing 12 gift cards</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Pre-Order Purchase Related (Provide only if the payment is related to Pre-Order)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSPreOrderReason</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>The pre-order reasons. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">“01” – The pre-order is due to merchant availability, i.e. the purchasing product is not available due to the insufficient stock in the merchant.</li>
+                                                <li class="block-list">“02” – The pre-order is for future release product, i.e. the purchasing product is going to be released on future date.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSPreOrderReadyDate</b></td>
+                                        <td>Text (8)</td>
+                                        <td>No</td>
+                                        <td>The expected ready date of the pre-order.  
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Account Info Related (Provide only if there is user account in merchant)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctCreateDate</b></td>
+                                        <td>Text (8)</td>
+                                        <td>No</td>
+                                        <td>Date that the cardholder opened the account.   
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctAgeInd</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Length of time that the cardholder has had the account. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">• 01 = No account (guest check-out)</li>
+                                                <li class="block-list">• 02 = Created during this transaction</li>
+                                                <li class="block-list">• 03 = Less than 30 days</li>
+                                                <li class="block-list">• 04 = 30−60 days</li>
+                                                <li class="block-list">• 05 = More than 60 days</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctLastChangeDate</b></td>
+                                        <td>Text (8)</td>
+                                        <td>No</td>
+                                        <td>Date that the cardholder’s account was last changed, including Billing or Shipping address, new payment account, or new user(s) added. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctLastChangeInd</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Length of time since the cardholder’s account information was last changed, including Billing or Shipping address, new payment account, or new user(s) added. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">• 01 = Changed during this transaction</li>
+                                                <li class="block-list">• 02 = Less than 30 days</li>   
+                                                <li class="block-list">• 03 = 30−60 days</li>
+                                                <li class="block-list">• 04 = More than 60 days</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctPwChangeDate</b></td>
+                                        <td>Text (8)</td>
+                                        <td>No</td>
+                                        <td>Date that cardholder’s account had a password change or account reset. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctPwChangeInd</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Indicates the length of time since the cardholder’s account had a password change or account reset. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">• 01 = No change</li>
+                                                <li class="block-list">• 02 = Changed during this transaction</li>   
+                                                <li class="block-list">• 03 = Less than 30 days</li>   
+                                                <li class="block-list">• 04 = 30−60 days</li>
+                                                <li class="block-list">• 05 = More than 60 days</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctPurchaseCount</b></td>
+                                        <td>Text (4)</td>
+                                        <td>No</td>
+                                        <td>Number of purchases with this cardholder account during the previous six months.  
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “13” – Purchased 13 times during the previous six months</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctCardProvisionAttempt</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Number of transactions (successful and abandoned) for this cardholder account across all payment accounts in the previous 24 hours.   
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “2” – Processed 2 transactions</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctNumTransDay</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Number of transactions (successful and abandoned) for this cardholder account across all payment accounts in the previous 24 hours. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “2” – Processed 2 transactions</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctNumTransYear</b></td>
+                                        <td>Text (3)</td>
+                                        <td>No</td>
+                                        <td>Number of transactions (successful and abandoned) for this cardholder account across all payment accounts in the previous year. 
+
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">e.g. “10” – Processed 10 transactions</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctPaymentAcctDate</b></td>
+                                        <td>Text (8)</td>
+                                        <td>No</td>
+                                        <td>Date that the payment account was enrolled in the cardholder’s account. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctPaymentAcctInd</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Indicates the length of time that the payment account was enrolled in the cardholder’s account.  
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">• 01 = No account (guest check-out)</li>
+                                                <li class="block-list">• 02 = During this transaction</li>   
+                                                <li class="block-list">• 03 = Less than 30 days</li>   
+                                                <li class="block-list">• 04 = 30−60 days</li>
+                                                <li class="block-list">• 05 = More than 60 days</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctShippingAddrLastChangeDate</b></td>
+                                        <td>Text (8)</td>
+                                        <td>No</td>
+                                        <td>Date when the shipping address used for this transaction was first used. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctShippingAddrLastChangeInd</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Indicates when the shipping address used for this transaction was first used   
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">• 01 = This transaction</li>
+                                                <li class="block-list">• 02 = Less than 30 days</li>   
+                                                <li class="block-list">• 03 = 30−60 days</li>
+                                                <li class="block-list">• 04 = More than 60 days</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctIsShippingAcctNameSame</b></td>
+                                        <td>Text (1)</td>
+                                        <td>No</td>
+                                        <td>Indicates if the Cardholder Name on the account is identical to the shipping Name used for this transaction. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">“T” – Account name identical to shipping name</li>
+                                                <li class="block-list">“F” – Account name different than shipping name</li>   
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctIsSuspiciousAcct</b></td>
+                                        <td>Text (1)</td>
+                                        <td>No</td>
+                                        <td>Indicates whether has experienced suspicious activity (including previous fraud) on the cardholder account. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">“T” – Suspicious activity has been observed</li>
+                                                <li class="block-list">“F” – No suspicious activity has been observed</li>   
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Account Authentication Info Related (Provide only if there is user account in merchant)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctAuthMethod</b></td>
+                                        <td>Text (2)</td>
+                                        <td>No</td>
+                                        <td>Mechanism used by the Cardholder to authenticate. <br><br>
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">• 01 = No authentication occurred (i.e. cardholder “logged in” as guest)</li>
+                                                <li class="block-list">• 02 = Login to the cardholder account at the merchant syste</li>   
+                                                <li class="block-list">• 03 = Login to the cardholder account at the merchant system using federated ID</li>   
+                                                <li class="block-list">• 04 = Login to the cardholder account at the merchant system using issuer credentials</li>   
+                                                <li class="block-list">• 05 = Login to the cardholder account at the merchant system using third-party authentication</li>   
+                                                <li class="block-list">• 06 = Login to the cardholder account at the merchant system using FIDO Authenticator</li>   
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSAcctAuthTimestamp</b></td>
+                                        <td>Text (8)</td>
+                                        <td>No</td>
+                                        <td>Date and time in UTC of the cardholder authentication. 
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">Format: YYYYMMDD</li>
+                                                <li class="block-list">e.g. “20190401”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4" class="table-subheader">Pay Token Related (Provide only if the card info is de-tokenized from pay token)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>threeDSPayTokenInd</b></td>
+                                        <td>Text (1)</td>
+                                        <td>No</td>
+                                        <td>Indicates that the transaction was de-tokenized.  
+                                            <ul class="list-style mbottom-0">
+                                                <li class="block-list">* Only provide when de-tokenized happened</li>
+                                                <li class="block-list">“T” – The card info is de-tokenized from pay token</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-sm table-responsive-sm table-bordered table-hover font-14">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" colspan="3" class="table-subheader">Redirect URL (successUrl, failUrl and cancelUrl) Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td width="20%"><b>Ref</b></td>
+                                        <td width="20%">Text</td>
+                                        <td>Merchant’s Order Reference Number <b>(For display purpose only. DO NOT use this URL to update your system. Please use DataFeed for this purpose.)</b> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="ExampleClientPostMethod" class="list-style">
+                                <li><span class="card-title">Example of Client Post Method (Source Code)</span></li>
+                            </ul>
+                            <p>The following is an example of integration of shopping cart routine with the payment routine of PayDollar
+                                PayGate in HTML. It is noteworthy that the portion in bold typeface as follows is mandatory for
+                                successful integration. 
+                            </p>
+                            <p class="mbottom-0">In the following sample form, hidden fields are used to hold the values: <br>
+                                ...<br>
+                                    &lt;form name="payFormCcard" method="post" action=" <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://test.paydollar.com/b2cDemo/eng/payment/payForm.jsp"&gt;<br>
+                                    &lt;input type="hidden" name="merchantId" value="1"&gt;<br>
+                                    &lt;input type="hidden" name="amount" value="3000" &lt;&gt;<br>
+                                    &lt;input type="hidden" name="orderRef" value="000000000014"&gt;<br>
+                                    &lt;input type="hidden" name="currCode" value="344" &lt;&gt;<br>
+                                    &lt;input type="hidden" name="mpsMode" value="NIL" &lt;&gt;<br>
+                                    &lt;input type="hidden" name="successUrl" <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value="http://www.yourdomain.com/Success.html"&gt;<br>
+                                    &lt;input type="hidden" name="failUrl" value="http://www.yourdomain.com/Fail.html"&gt;<br> 
+                                    &lt;input type="hidden" name="cancelUrl" value="http://www.yourdomain.com/Cancel.html"&gt;<br>
+                                    &lt;input type="hidden" name="payType" value="N"&gt;<br>
+                                    &lt;input type="hidden" name="lang" value="E"&gt;<br>
+                                    &lt;input type="hidden" name="payMethod" value="CC"&gt;<br>
+                                    &lt;input type="hidden" name="secureHash" <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value="44f3760c201d3688440f62497736bfa2aadd1bc0"&gt; <br>
+                                    &lt;input type="submit" name="submit"&gt; <br>
+                                    &lt;/form> <br>
+                                    ... 
+                            </p>    
+                        </div>
+
+                        <div class="card-body">
+                            <ul id="KickOffClientPostThrough" class="list-style">
+                                <li><span class="card-title">Kick Off</span></li>
+                            </ul>
+                            <p>After the integration has been completed, it is ready to launch your e-commerce web to serve your
+                                customers. Please copy the following <b>TESTING URL</b> for client post method: 
+                            </p>
+                            <div class="text-center"> 
+                                <hr>
+                                <a href="https://test.paydollar.com/b2cDemo/eng/payment/payForm.jsp" target="_blank" 
+                                    class="anchor-content"><b>https://test.paydollar.com/b2cDemo/eng/payment/payForm.jsp</b>
+                                </a>
+                                <hr>
+                            </div>
+                            <p>Please copy the following <b>PRODUCTION URL</b> for client post method: </p>
+                            <div class="text-center">
+                                <hr>
+                                <a href="https://www.paydollar.com/b2c2/eng/payment/payForm.jsp" target="_blank" 
+                                    class="anchor-content"><b>https://www.paydollar.com/b2c2/eng/payment/payForm.jsp</b>
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Auto Update Year -->
+                <footer>
+                    <p class="text-muted footer"> Copyright &copy; <script>document.write(new Date().getFullYear())</script> AsiaPay All Rights Reserved</p>
+                </footer>
+            </div>
+        </div>
+    </body>
+
+    <script src="../../js/bootstrap.bundle.min"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="../../js/style.js"></script>
+</html>
